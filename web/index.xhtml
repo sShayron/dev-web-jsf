@@ -7,10 +7,13 @@
     </h:head>
     <h:body>
         Hello from Facelets
+        <h:messages showDetail="true" infoStyle="color: blue" errorStyle="color:red"/>
         <h:form>
-            Nome: <h:inputText value="#{usuarioBean.name}" />
-            Senha: <h:inputText value="#{usuarioBean.senha}"/>
-            <h:commandButton value="enviar" action="case1"/>
+            Nome: <h:inputText id="name" value="#{usuarioBean.name}" required="true"/>
+            <br/><h:message for="name" showSummary="false"/>
+            Senha: <h:inputSecret id="senha" value="#{usuarioBean.senha}" required="true"/>
+            <br/><h:message for="senha" showSummary="false"/>
+            <h:commandButton value="enviar" action="#{usuarioBean.valida()}"/>
         </h:form>
     </h:body>
 </html>
