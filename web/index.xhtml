@@ -11,8 +11,13 @@
         <h:form>
             Nome: <h:inputText id="name" value="#{usuarioBean.name}" required="true"/>
             <br/><h:message for="name" showSummary="false"/>
-            Senha: <h:inputSecret id="senha" value="#{usuarioBean.senha}" required="true"/>
-            <br/><h:message for="senha" showSummary="false"/>
+            Senha: <h:inputSecret
+                    id="senha"
+                    value="#{usuarioBean.senha}"
+                    required="true"
+                    requiredMessage="Obrigatorio preencher o campo com senha"
+                    validator="validadorSenhaTamanho"/>
+<!--            <br/><h:message for="senha" showSummary="false"/>-->
             <h:commandButton value="enviar" action="#{usuarioBean.valida()}"/>
         </h:form>
     </h:body>
