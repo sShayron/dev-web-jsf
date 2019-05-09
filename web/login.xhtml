@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Login</title>
+    </h:head>
+    <h:body>
+        Login
+        <h:messages showDetail="true" infoStyle="color: blue" errorStyle="color:red"/>
+        <h:form>
+            Login: <h:inputText id="login" value="#{authBean.login}" required="true"/>
+            <br/><h:message for="name" showSummary="false"/>
+            Senha: <h:inputSecret
+                    id="senha"
+                    value="#{authBean.senha}"
+                    required="true"
+                    requiredMessage="Obrigatorio preencher o campo com senha"
+                    validator="validadorSenhaTamanho"/>
+            <!--            <br/><h:message for="senha" showSummary="false"/>-->
+            <h:commandButton value="enviar" action="#{authBean.login()}"/>
+        </h:form>
+    </h:body>
+</html>
