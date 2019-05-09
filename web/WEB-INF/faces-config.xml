@@ -6,8 +6,15 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>case1</from-outcome>
-            <to-view-id>/seu-nome.xhtml</to-view-id>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>login</from-view-id>
+        <navigation-case>
+            <from-outcome>dashboard</from-outcome>
+            <to-view-id>/dashboard.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>
